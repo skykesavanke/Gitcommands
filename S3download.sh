@@ -6,6 +6,6 @@ if ! which aws &> /dev/null; then
   exit 1
 fi
 aws s3 cp "s3://${BUCKET_NAME}" "${download_dir}" --recursive --quiet
-
+aws s3 rm "s3://${BUCKET_NAME}" --recursive
 echo "download completed successfully"
 echo "Deletion completed"
